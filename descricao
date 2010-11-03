@@ -1,0 +1,75 @@
+Algoritmos em grafos
+
+O objetivo do trabalho é a implementação de algoritmos que resolvam problemas em grafos.
+
+Os problemas a serem resolvidos são explicados no final deste texto e estão listados abaixo:
+
+    * cobertura de vértices;
+    * quasi-cliques;
+    * k-conexidade;
+    * isomorfismo. 
+
+O grupo deve escolher dois destes problemas, resolver e implementar (de acordo com as especificações abaixo).
+Requisitos mínimos:
+
+O trabalho deve ser feito de forma que possa ser compilado e executado nas servidoras de computação do Departamento de Informática.
+O que deve ser entregue:
+
+Além dos arquivos fonte, deve acompanhar um makefile e um arquivo README explicando o que foi feito e com o nome dos autores. Qualquer particularidade deve estar descrita neste texto.
+Forma de entrega:
+
+O trabalho deve ser empacotado em um arquivo login1-login2-login3.tar.gz, onde login1-login2-login3 é uma string com os logins dos integrantes da equipe nas servidoras do DInf. Este arquivo deve ser enviado por e-mail ao endereço do professor (andre) com o assunto "CI065-trab2" (exatamente).
+Equipe:
+
+O trabalho DEVE ser feito em equipes de 2 (dois) ou 3 (três) alunos de graduação ou por 1 (um) aluno do mestrado.
+Problemas:
+
+Aqui estão as especificações dos problemas.
+
+Em todos os problemas cada grafo será descrito em um arquivo de texto contendo a representação através de uma matriz de adjacências. Uma e somente uma quebra de linha do arquivo separa duas linhas da matriz, não havendo separação entre as colunas. Considere que o conjunto de vértices são os números inteiros de 1 a n, onde n é o número de linhas da matriz.
+
+Por exemplo, o texto abaixo representa o grafo completo com 3 vértices.
+
+  011
+  101
+  110
+
+cobertura de vértices:
+
+Dado um grafo G encontrar um conjunto X de vértices de G tal que todas as arestas tenham pelo menos um extremo em X e |X| seja mínimo.
+
+    * Entrada: um arquivo com a descrição de um grafo lido da entrada padrão;
+
+    * Saída: os vértices que formam X, um por linha, escritos na saída padrão.
+
+    * Nome do executável: cover 
+
+quasi-cliques:
+
+Dado um grafo G e um parâmetro c, com 0 < c <= 1, encontrar um conjunto X de vértices de G tal que, para cada vértice v de X, o número de vizinhos de v em X é pelo menos c.(|X|-1) e |X| seja máximo.
+
+    * Entrada: um arquivo com o valor de c na primeira linha e a descrição de um grafo a partir da segunda linha.
+
+    * Saída:: os vértices que formam X, um por linha, escritos na saída padrão.
+
+    * Nome do executável: quasi 
+
+k-conexidade:
+
+Dado um grafo G e um parâmetro k, inteiro positivo, determinar se G é um grafo k-conexo.
+
+    * Entrada: um arquivo com o valor de k na primeira linha e a descrição de um grafo a partir da segunda linha.
+
+    * Saída:: 1 ou 0 (escritos na saída padrão) caso G seja k-conexo ou não (respectivamente).
+
+    * Nome do executável: k-conexo 
+
+isomorfismo:
+
+Dados dois grafos, determinar se são isomorfos ou não.
+
+    * Entrada: um arquivo com a descrição dos dois grafos com uma linha em branco entre a descrição do primeiro e a do segundo.
+
+    * Saída:: 1 ou 0 (escritos na saída padrão) caso os grafos sejam isomorfos ou não (respectivamente).
+
+    * Nome do executável: isomorfos
