@@ -1,6 +1,8 @@
 #ifndef __libiso__
 #define __libiso__
 
+#include "lib_ord.h"
+
 typedef struct  {
     int *vizinhos;
     int grau;
@@ -8,7 +10,7 @@ typedef struct  {
 
 typedef struct grafo {
     vertice *v;
-    int graus;
+    int *graus;
     int n_vertices;
     int arestas;
     } grafo;
