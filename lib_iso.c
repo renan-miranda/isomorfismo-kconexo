@@ -23,6 +23,7 @@ grafo le_grafo()
         {
             switch(i) {
                 case '0':
+                    printf("Adicionou 0 em %d,%d\n", linhas, colunas);
                     if(linhas == 0)
                         g.matriz[linhas] = aloca_coluna(colunas+1);
                     g.matriz[linhas][colunas] = 0;
@@ -30,6 +31,7 @@ grafo le_grafo()
                     break;
 
                 case '1':
+                    printf("Adicionou 1 em %d,%d\n", linhas, colunas);
                     if(linhas == 0)
                         g.matriz[linhas] = aloca_coluna(colunas+1);
                     g.arestas++;
@@ -39,6 +41,7 @@ grafo le_grafo()
                     break;
 
                 case '\n':
+                    printf("Pulou Linha\n");
                     linhas++;
                     if(linhas == colunas)
                     {
@@ -47,9 +50,10 @@ grafo le_grafo()
                         g.graus[linhas-1] = grau;
                         parada = 1;
                     }
-                    else if(linhas == 0)
+                    else if(linhas-1 == 0)
                     {
-                        g.matriz = cria_matriz(colunas);
+                        realoca_matriz(g.matriz, colunas);
+                        printf("Agora matriz e %dx%d\n", colunas, colunas);
                         g.graus = aloca_vet(g.graus, linhas);
                         g.graus[linhas-1] = grau;
                         grau = 0;
@@ -165,11 +169,14 @@ int permuta(int v[], int k, int n, grafo g, grafo f)
             /* permuta segmento de k+1 ate n e retorna com
                o segmento restaurado, isto e, da forma como
                foi passado para a funcao */
-            res = permuta(v, k + 1, n, g, f);
-            aux = v[k];            // restuara
-            v[k] = v[i];
-            v[i] = aux;
-            i = i + 1;
+            if(!res)
+            {
+                res = permuta(v, k + 1, n, g, f);
+                aux = v[k];            // restuara
+                v[k] = v[i];
+                v[i] = aux;
+                i = i + 1;
+            }
         }
     }
     return res;

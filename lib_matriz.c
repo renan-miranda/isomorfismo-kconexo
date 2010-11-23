@@ -33,6 +33,17 @@ int ** cria_matriz(int tam)
     return matriz;
 }
 
+void realoca_matriz(int **matriz, int tam)
+{
+    int i;
+
+    matriz = (int**) realloc(matriz, tam * sizeof(int*));
+    for(i=0; i < tam; i++)
+    {
+        matriz[i] = (int*) realloc(matriz[i], tam * sizeof(int));
+    }
+}
+
 void destroi_matriz(int **m, int tam)
 {
     int i;

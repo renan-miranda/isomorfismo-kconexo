@@ -16,7 +16,7 @@ int main()
     imprime_grafo(g);
     imprime_grafo(f);
 
-    printf("%d\n", sao_isomorfos(g,f));
+    //printf("%d\n", sao_isomorfos(g,f));
 
     return 0;
 }
