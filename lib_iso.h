@@ -2,15 +2,10 @@
 #define __libiso__
 
 #include "lib_ord.h"
-
-typedef struct  {
-    int *vizinhos;
-    int grau;
-    } vertice;
+#include "lib_matriz.h"
 
 typedef struct grafo {
-    vertice *v;
-    int *graus;
+    int *graus, **matriz;
     int n_vertices;
     int arestas;
     } grafo;
@@ -18,5 +13,7 @@ typedef struct grafo {
 grafo le_grafo();
 int sao_isomorfos(grafo g, grafo f);
 void imprime_grafo(grafo g);
+void mostre(int v[], int n);
+int permuta(int v[], int k, int n, grafo g, grafo f);
 
 #endif
